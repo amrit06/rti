@@ -4,8 +4,6 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Blog;
-use Illuminate\Support\Facades\DB;
-
 
 class BlogController extends Controller
 {
@@ -38,7 +36,6 @@ class BlogController extends Controller
      */
     public function create()
     {
-        //
         return view('blog.create');
     }
 
@@ -50,7 +47,6 @@ class BlogController extends Controller
      */
     public function store(Request $request)
     {
-        //
         $this->validate($request, [
             'title' => 'required',
             'story' => 'required'
@@ -71,7 +67,6 @@ class BlogController extends Controller
      */
     public function show($id)
     {
-        // in blog model find data with with id
         return view('blog.show')->with('eachblog', Blog::find($id));
     }
 
@@ -83,7 +78,6 @@ class BlogController extends Controller
      */
     public function edit($id)
     {
-        //
         return view('blog.edit')->with('blog', Blog::find($id));
     }
 
@@ -96,7 +90,6 @@ class BlogController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
         $this->validate($request, [
             'title' => 'required',
             'story' => 'required'
@@ -117,7 +110,6 @@ class BlogController extends Controller
      */
     public function destroy($id)
     {
-        //
         $blog = Blog::find($id);
         $blog->delete();
         return redirect('/blog')->with('success', 'Blog Deleted');

@@ -30,6 +30,8 @@ Route::get('/service', 'App\Http\Controllers\PagesController@service');
 //Route::get('/blog', 'App\Http\Controllers\PagesController@blog');
 
 
+Route::resource('blog',  'App\Http\Controllers\BlogController');
+
 
 
 
