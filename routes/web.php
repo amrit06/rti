@@ -13,6 +13,23 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// creating a direct route
+// Route::get('/', function () {
+//     return view('pages.index');
+// });
+
+//route with sending data. the page must have the var variable
+// Route::get('/', function () {
+//     return view('pages.index')->with('var', 'amrit');
+// });
+
+//route but going through controller
+Route::get('/', 'App\Http\Controllers\PagesController@index');
+Route::get('/about', 'App\Http\Controllers\PagesController@about');
+Route::get('/service', 'App\Http\Controllers\PagesController@service');
+//Route::get('/blog', 'App\Http\Controllers\PagesController@blog');
+
+
+
+
+
